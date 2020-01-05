@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "795304280577",
+    "firebase_url": "https://insurance-application-8ece9.firebaseio.com",
+    "project_id": "insurance-application-8ece9",
+    "storage_bucket": "insurance-application-8ece9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795304280577:android:3d6daad9df6f6db1f0f600",
+        "android_client_info": {
+          "package_name": "com.example.insure_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "795304280577-qdevp89jkunlt8ir952r90rep5backj8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.insure_app",
+            "certificate_hash": "922183eab0c79b7e185b9f83d59d45620b37438c"
+          }
+        },
+        {
+          "client_id": "795304280577-cbno3g6q284fl55cut3u7v9g9ndk7amk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyFNa8EHsHTBRI92JUkZAOcpqBEgm0yXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "795304280577-cbno3g6q284fl55cut3u7v9g9ndk7amk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
