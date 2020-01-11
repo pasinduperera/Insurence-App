@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:insure_app/Services/FetchUser.dart';
 import 'package:provider/provider.dart';
 
@@ -28,6 +29,17 @@ class _LoginPageState extends State<Login> {
       print(x);
       if (x) {
         print(fetching.getUser().name);
+
+        Fluttertoast.showToast(
+            msg: "Successfully LoggedIn",
+            toastLength: Toast.LENGTH_LONG,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIos: 2,
+            backgroundColor: Colors.blue,
+            textColor: Colors.white,
+            fontSize: 16.0);
+        Navigator.of(context).pushNamed('/dashboard');
+        return true;
         // print(fetching.getUser().username);
         // bool y = await products.fetchProductList(tokenM);
         //   if (y) {
@@ -57,19 +69,27 @@ class _LoginPageState extends State<Login> {
         setState(() {
           _state = 0;
         });
+        Fluttertoast.showToast(
+            msg: "Logging Failed",
+            toastLength: Toast.LENGTH_LONG,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIos: 2,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
         return false;
       }
     }
   }
 
-  DecorationImage _buildbackgroundImage() {
-    return DecorationImage(
-      fit: BoxFit.cover,
-      colorFilter:
-          ColorFilter.mode(Colors.black.withOpacity(1), BlendMode.dstATop),
-      image: AssetImage('assets/Images/back.jpg'),
-    );
-  }
+  // DecorationImage _buildbackgroundImage() {
+  //   return DecorationImage(
+  //     fit: BoxFit.cover,
+  //     colorFilter:
+  //         ColorFilter.mode(Colors.black.withOpacity(1), BlendMode.dstATop),
+  //     image: AssetImage('assets/Images/back.jpg'),
+  //   );
+  // }
 
   Widget _usernameTF() {
     return TextFormField(
@@ -240,8 +260,8 @@ class _LoginPageState extends State<Login> {
         body: Container(
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            image: _buildbackgroundImage(),
-          ),
+              // image: _buildbackgroundImage(),
+              ),
           padding: EdgeInsets.all(10.0),
           child: Center(
             child: SingleChildScrollView(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insure_app/views/Dashboard.dart';
 import 'package:insure_app/views/Home.dart';
 import 'package:insure_app/views/Login.dart';
 import 'package:provider/provider.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
           routes: <String, WidgetBuilder>{
             '/Home': (BuildContext context) => new MyHomePage(),
             '/login': (BuildContext context) => new Login(),
+            '/dashboard': (BuildContext context) => new Dashbord(),
           },
           debugShowCheckedModeBanner: false,
           home: MyHomePage(),

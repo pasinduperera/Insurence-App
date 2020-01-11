@@ -16,49 +16,25 @@ class FetchUser with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<bool> fetchuser(String email, String password) async {
-    Firestore.instance
-        .collection('talks')
-        .where("topic", isEqualTo: "flutter")
-        .snapshots()
-        .listen((data) => data.documents.forEach((doc) => print(doc["title"])));
+  Future<bool> fetchuser(String name, String password) async {
+    var document = await Firestore.instance
+        .collection('Users')
+        .where("name", isEqualTo: name)
+        .where("password", isEqualTo: password)
+        .getDocuments();
 
-    var body = new Map<String, String>();
-
-    body["usernameOrEmail"] = email;
-
-    body["password"] = password;
-
-    print(body);
-    print(json.encode(body));
-
-    print("inside fetch user ----------------------------------");
-    try {
-      final http.Response response = await http.post(
-        'http://192.168.43.238:8080/api/auth/signin',
-        headers: {"Content-Type": "application/json"},
-        body: json.encode(body),
-      );
-
-      print(response.body);
-
-      final int statusCode = response.statusCode;
-      print(statusCode);
-      if (statusCode == 200 || statusCode == 201) {
-        print('sucees');
-        print(response.body);
-        final jsonResponse = json.decode(response.body);
-
-        return true;
-      } else {
-        print("Failed");
-        print(statusCode);
-
-        return false;
-      }
-    } catch (e) {
-      print(e);
+    if (document.documents.isEmpty) {
+      print('no documents found');
+      setUser(null);
+      notifyListeners();
       return false;
+    } else {
+      print("dataaaaaa");
+      print(document.documents.elementAt(0).data);
+      User p = User.fromJson(document.documents.elementAt(0).data);
+      setUser(p);
+
+      return true;
     }
   }
 }
