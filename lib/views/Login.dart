@@ -38,7 +38,7 @@ class _LoginPageState extends State<Login> {
             backgroundColor: Colors.blue,
             textColor: Colors.white,
             fontSize: 16.0);
-        Navigator.of(context).pushNamed('/dashboard');
+        Navigator.of(context).pushReplacementNamed('/dashboard');
         return true;
         // print(fetching.getUser().username);
         // bool y = await products.fetchProductList(tokenM);

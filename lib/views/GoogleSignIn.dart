@@ -75,7 +75,7 @@ class GSignInState extends State<GSignIn> {
         new Container(
           decoration: new BoxDecoration(
             image: new DecorationImage(
-              image: new AssetImage("assets/images/back.png"),
+              image: new AssetImage("assets/back.png"),
               fit: BoxFit.cover,
             ),
           ),
@@ -150,6 +150,9 @@ class GSignInState extends State<GSignIn> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   RaisedButton(
+                    shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(18.0),
+                        side: BorderSide(color: Colors.white)),
                     color: Colors.blue,
                     child: const Text('DASHBOARD'),
                     onPressed: () async {
@@ -157,6 +160,9 @@ class GSignInState extends State<GSignIn> {
                     },
                   ),
                   RaisedButton(
+                    shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(18.0),
+                        side: BorderSide(color: Colors.grey)),
                     child: const Text('SIGN OUT'),
                     onPressed: _handleSignOut, //me functon eka ehata
                   ),
@@ -172,7 +178,7 @@ class GSignInState extends State<GSignIn> {
           new Container(
             decoration: new BoxDecoration(
               image: new DecorationImage(
-                image: new AssetImage("assets/images/back.png"),
+                image: new AssetImage("assets/back.png"),
                 fit: BoxFit.cover,
               ),
             ),
