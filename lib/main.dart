@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:insure_app/views/Dashboard.dart';
+import 'package:insure_app/views/GoogleSignIn.dart';
 import 'package:insure_app/views/Home.dart';
 import 'package:insure_app/views/Login.dart';
 import 'package:provider/provider.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
             '/Home': (BuildContext context) => new MyHomePage(),
             '/login': (BuildContext context) => new Login(),
             '/dashboard': (BuildContext context) => new Dashbord(),
+            '/google': (BuildContext context) => new GSignIn(),
           },
           debugShowCheckedModeBanner: false,
           home: MyHomePage(),
